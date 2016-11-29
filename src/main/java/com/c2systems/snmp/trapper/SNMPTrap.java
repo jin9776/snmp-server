@@ -1,17 +1,14 @@
 package com.c2systems.snmp.trapper;
 
-import java.util.Date;
-
-import org.apache.camel.CamelContext;
 import org.apache.camel.Exchange;
 import org.apache.camel.Main;
 import org.apache.camel.Processor;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.snmp.SnmpComponent;
-import org.apache.camel.impl.DefaultCamelContext;
 import org.apache.camel.main.MainListenerSupport;
 import org.apache.camel.main.MainSupport;
 
+@SuppressWarnings("deprecation")
 public class SNMPTrap {
 
     private Main main;
