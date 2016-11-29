@@ -6,6 +6,7 @@ This is where the magic happens:
 * Export to runnable .jar
 
 Then run using `java -jar snmp-server.jar`
+
 ![run server](https://raw.githubusercontent.com/jsteffensen/snmp-server/master/imgs/screen1.png)
 
 Test with [https://www.snmpsoft.com/cmd-tools/snmp-trap-gen/](https://www.snmpsoft.com/cmd-tools/snmp-trap-gen/)
@@ -13,4 +14,5 @@ Test with [https://www.snmpsoft.com/cmd-tools/snmp-trap-gen/](https://www.snmpso
 ![test with SnmpTrapGen](https://raw.githubusercontent.com/jsteffensen/snmp-server/master/imgs/screen2.png)
 
 Print String representation to System.out:
+
 ![Prints to System.out](https://raw.githubusercontent.com/jsteffensen/snmp-server/master/imgs/screen3.png)
