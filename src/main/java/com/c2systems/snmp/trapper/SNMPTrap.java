@@ -16,11 +16,9 @@ public class SNMPTrap {
 
     private Main main;
 
-
-
     public static void main(String[] args) throws Exception {
-    	SNMPTrap example = new SNMPTrap();
-        example.boot();
+    	SNMPTrap snmpTrap = new SNMPTrap();
+    	snmpTrap.boot();
     }
 
     @SuppressWarnings("deprecation")
@@ -31,7 +29,7 @@ public class SNMPTrap {
         main.addRouteBuilder(new MyRouteBuilder());
         main.addMainListener(new Events());
 
-        System.out.println("Starting Camel. Use ctrl + c to terminate the JVM.\n");
+        System.out.println("Starting SNMPTrap. Use ctrl + c to terminate the JVM.\n");
         main.run();
     }
 
@@ -44,8 +42,10 @@ public class SNMPTrap {
     }
 
     public static Processor myProcessor = new Processor() {
-        public void process(Exchange arg0) throws Exception {
-            // save to database
+        public void process(Exchange trap) throws Exception {
+            System.out.println(trap.getIn().getBody(String.class));
+
+            // Save to DB or do other good stuff
         }
     };
 
@@ -53,12 +53,12 @@ public class SNMPTrap {
 
         @Override
         public void afterStart(MainSupport main) {
-            System.out.println("MainExample with Camel is now started!");
+            System.out.println("SNMPTrap is now started!");
         }
 
         @Override
         public void beforeStop(MainSupport main) {
-            System.out.println("MainExample with Camel is now being stopped!");
+            System.out.println("SNMPTrap is now being stopped!");
         }
     }
 }
